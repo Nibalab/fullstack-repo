@@ -15,18 +15,10 @@ jobs:
         with:
           submodules: recursive
 
-      - name: Configure Git
+      - name: Update submodules
         run: |
           git config --global user.name "Nibal"
           git config --global user.email "nibalabd.2002@hotmail.com"
-
-      - name: Verify Git Configuration
-        run: |
-          git config --global --get user.name
-          git config --global --get user.email
-
-      - name: Update submodules
-        run: |
           git submodule update --remote --merge
           git add .
           git commit -m "Update submodules"
