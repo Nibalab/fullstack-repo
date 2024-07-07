@@ -17,18 +17,25 @@ jobs:
 
       - name: Configure Git
         run: |
+          echo "Configuring Git"
           git config --global user.name "Nibal"
           git config --global user.email "nibalabd.2002@hotmail.com"
 
       - name: Verify Git Configuration
         run: |
+          echo "Verifying Git Configuration"
           echo "Git user name: $(git config --global user.name)"
           echo "Git user email: $(git config --global user.email)"
+
       - name: Update submodules
         run: |
+          echo "Updating Submodules"
           git submodule update --remote --merge
+          echo "Adding Changes"
           git add .
+          echo "Committing Changes"
           git commit -m "Update submodules"
+          echo "Pushing Changes"
           git push origin main
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
