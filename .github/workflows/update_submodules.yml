@@ -34,7 +34,6 @@ jobs:
           echo "Checking for changes"
           if git diff-index --quiet HEAD --; then
             echo "No changes to commit"
-            exit 0
           else
             echo "Adding Changes"
             git add .
