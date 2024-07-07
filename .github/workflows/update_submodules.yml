@@ -24,7 +24,6 @@ jobs:
         run: |
           echo "Git user name: $(git config --global user.name)"
           echo "Git user email: $(git config --global user.email)"
-
       - name: Update submodules
         run: |
           git submodule update --remote --merge
