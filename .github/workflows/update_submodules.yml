@@ -15,6 +15,11 @@ jobs:
         with:
           submodules: recursive
 
+      - name: Configure Git
+        run: |
+          git config --global user.name "Nibal"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+
       - name: Update submodules
         run: |
           git submodule update --remote --merge
