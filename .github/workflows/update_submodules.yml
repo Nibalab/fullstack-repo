@@ -47,7 +47,7 @@ jobs:
         if: steps.check_changes.outputs.changes == 'true'
         run: |
           echo "Committing Changes"
-          git commit -m "Update submodules"
+          git commit -m "Update submodules" || exit 0
 
       - name: Push Changes
         if: steps.check_changes.outputs.changes == 'true'
